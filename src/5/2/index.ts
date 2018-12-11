@@ -54,12 +54,16 @@ function testRemovePolymers(input: string) {
   return min;
 }
 
-const input = readFileSync('./input.txt').toString()
+export async function start(src: string) {
+  const input = readFileSync(src).toString()
 
-const start = +new Date()
-const output = testRemovePolymers(input);
-const end = +new Date();
-var diff = end - start;
+  const start = +new Date()
+  const output = testRemovePolymers(input);
+  const end = +new Date();
+  var diff = end - start;
 
-console.log("TIME:", diff);
-console.log("RESULT:", output);
+  console.log("TIME:", diff);
+  console.log("RESULT:", output);
+
+  return output;
+}

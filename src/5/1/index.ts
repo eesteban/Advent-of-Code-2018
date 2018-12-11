@@ -40,11 +40,16 @@ function parsePolymers(input: string) {
   return input;
 }
 
-const input = readFileSync('./input.txt').toString()
-const start = +new Date()
-const output = parsePolymers(input);
-const end = +new Date();
-var diff = end - start;
+export async function start(src: string) {
+  const input = readFileSync(src).toString()
 
-console.log("TIME:", diff);
-console.log("RESULT:", output);
+  const start = +new Date()
+  const output = parsePolymers(input);
+  const end = +new Date();
+  var diff = end - start;
+
+  console.log("TIME:", diff);
+  console.log("RESULT:", output);
+
+  return output;
+}
